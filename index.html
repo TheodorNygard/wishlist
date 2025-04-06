@@ -25,15 +25,13 @@
 
     /* Add confetti pieces */
     .confetti {
-      position: absolute;
+      position: fixed; /* Changed from absolute to fixed */
       top: 0;
-      left: 50%;
       width: 10px;
       height: 10px;
       background-color: var(--secondary-color);
       opacity: 0.8;
       animation: confetti 3s linear infinite;
-      transform: translateX(-50%);
       border-radius: 50%;
     }
 
@@ -54,7 +52,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      overflow: hidden;
+      /* Removed overflow: hidden; to allow scrolling */
     }
 
     .container {
@@ -64,7 +62,6 @@
       background-color: white;
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
-      overflow: hidden;
       position: relative;
       z-index: 2;
     }
@@ -223,6 +220,15 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        padding: 10px;
+        display: block; /* Changed from flex to block for mobile */
+      }
+      
+      .container {
+        margin: 10px auto;
+      }
+      
       .wishlist-item {
         flex-direction: column;
         align-items: flex-start;
@@ -239,6 +245,10 @@
         margin-left: 0;
         margin-top: 10px;
         display: inline-block;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -258,7 +268,7 @@
 
     <ul class="wishlist">
       <li class="wishlist-item">
-        <img src="https://www.warhammer.com/app/resources/catalog/product/920x950/99120110048_HexmarkDestroyerLead.jpg" alt="Necrons Hexmark Destroyer" class="item-image" />
+        <img src="/api/placeholder/400/320" alt="Necrons Hexmark Destroyer" class="item-image" />
         <div class="item-details">
           <div class="item-name">Necrons Hexmark Destroyer</div>
           <div class="item-price">250 kr</div>
@@ -267,7 +277,7 @@
       </li>
 
       <li class="wishlist-item">
-        <img src="https://www.warhammer.com/app/resources/catalog/product/920x950/99070110007_RoyalWarden1.jpg" alt="Necrons Royal Warden" class="item-image" />
+        <img src="/api/placeholder/400/320" alt="Necrons Royal Warden" class="item-image" />
         <div class="item-details">
           <div class="item-name">Necrons Royal Warden</div>
           <div class="item-price">285 kr</div>
@@ -276,7 +286,7 @@
       </li>
 
       <li class="wishlist-item">
-        <img src="https://www.warhammer.com/app/resources/catalog/product/920x950/99120110049_IlluminorSzerasLead.jpg" alt="Necrons Illuminor Szeras" class="item-image" />
+        <img src="/api/placeholder/400/320" alt="Necrons Illuminor Szeras" class="item-image" />
         <div class="item-details">
           <div class="item-name">Necrons Illuminor Szeras</div>
           <div class="item-price">445 kr</div>
@@ -285,7 +295,7 @@
       </li>
 
       <li class="wishlist-item">
-        <img src="https://www.warhammer.com/app/resources/catalog/product/920x950/99120110072_NECRoyalCourtLead.jpg" alt="Necrons Royal Court" class="item-image" />
+        <img src="/api/placeholder/400/320" alt="Necrons Royal Court" class="item-image" />
         <div class="item-details">
           <div class="item-name">Necrons Royal Court</div>
           <div class="item-price">945 kr</div>
